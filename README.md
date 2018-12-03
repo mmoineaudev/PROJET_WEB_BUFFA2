@@ -61,8 +61,8 @@ v-bind:style="{color: getColor()}"
 
 ```
 new Vue.component( 'app-NOM', {
-props:[lesnomsd'attributs],
-data: lesfonctions ???
+props:[lesnomsd'attributs], /*ca ca se spécifie dans le template -> <app-NOM unnomdattribut='value'></>*/
+data: lesvaleursd'attributs 
 template: 'untrucenhtmlavecdesdirectivesvuejsquiasesappelsdedirectivesvueJS&demethods'
 }),
 methods:  { lesdeclarationsdemethodes }
