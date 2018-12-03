@@ -36,14 +36,17 @@ this.$emit('nomdevenement', valeur)
 
 # Infos
  
-composant custom : convention de nommage <app-NOM></app-NOM>
+* composant custom : convention de nommage <app-NOM></app-NOM>
 
-v-bind : c'est la manère d'instancier un objet html de maniere dynamique...
+* v-bind : c'est la manère d'instancier un objet html de maniere dynamique...
 
-v-for:"(uneVar, ...) in collection"
+* v-for:"(uneVar, ...) in collection"
 
-évènements : jamais de majuscules...
+* évènements : jamais de majuscules...
 
-quand on passe $event sur un truc clickable on peut recup le modèle lié
+* quand on passe $event sur un truc clickable on peut recup le modèle lié
 
-script src -> ca se fait pas 100% par npm install
+* script src cause des problèmes d'ordres evidémment -> ca se fait pas : 
+
+100% par npm install
+Remplacé par import Vue from 'vue'
