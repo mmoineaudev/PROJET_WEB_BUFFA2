@@ -150,3 +150,12 @@ permet d'associer un composant a une url
 on ajoute au new Vue({
     router: nomdurouteur
 })
+
+<hr>
+
+* Sérialiser un formulaire : 
+
+quand on appelle une méthode avec v-on:submit, on place eventTarget en paramètre
+let form = eventTarget; let formulaire = new FormData(form);
+
+form=idduformulaire dans un input ca fait comme si l'input était dans le formulaire
