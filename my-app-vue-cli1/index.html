@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>my-app-vue-cli1</title>
-  </head>
-  <body>
-    <div id="app"></div>
+    <meta charset="utf-8" />
+    <title>my-app-vue-cli</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
     <script src="/dist/build.js"></script>
+    <script src="/src/main.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="semantic/dist/semantic.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+  </head>
+
+  <body>
+    <div class="ui main content" id="app">
+      <div class="column"></div>
+      <div class="ui raised segment">
+        <p class="ui red ribbon label">Projet web : VueJS cli</p>
+        <span>Maxime MOINEAU - M1 MIAGE</span>
+      </div>
+      <div class="ui raised segment">
+        <p class="ui blue ribbon label">La liste des restaurants :</p>
+        <restaurants></restaurants>
+      </div>
+    </div>
   </body>
 </html>
