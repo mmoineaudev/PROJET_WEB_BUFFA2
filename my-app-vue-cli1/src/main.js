@@ -1,26 +1,33 @@
 import Vue from "vue";
-import App from "./App.vue";
 window.onload = init;
 function init() {
   //Composant restaurants, contient les différents restaurants
-  Vue.component("restaurants", {
-    template: `<div class="ui items">
-    la future liste</div>`
-  }); //<restaurant id = {{ restaurant.id }} nom = {{ restaurant.nom }} cuisine = {{ restaurant.cuisine }} v -for= "restaurant in restaurants" ></restaurant >
-  /*  props: {},
-    data() {
-      return this.getRestaurantsFromServeur();
+  Vue.component("restaurant", {
+    template: `  
+      <p>{{id}},
+      {{cuisine}},
+      {{nom}}
+      </p>
+  `,
+    props: {
+      id: { type: String, defaut: 0 },
+      cuisine: { type: String, defaut: "???" },
+      nom: { type: String, defaut: "restaurant : ???" }
     },
     mounted() {
-      console.log("restaurants.mounted");
-      //this.restaurants = this.getRestaurantsFromServeur()
+      console.log("restaurant.mounted");
     },
-    methods: {}
-  });*/
+    data() {
+      return {
+        id,
+        cuisine,
+        nom
+      };
+    }
+  });
   //instance de vue principale
   let mainView = new Vue({
     el: "#app",
-    //  components: { restaurants },
     data() {
       restaurants: Array;
     },
@@ -72,25 +79,5 @@ function init() {
     }*/
   //composant restaurant, contient 1 restaurant
   /*let restaurant = {
-  template: `  
-      {{id}},
-      {{cuisine}},
-      {{nom}}
-  `,
-  props: {
-    id: { type: String, defaut: 0 },
-    cuisine: { type: String, defaut: "???" },
-    nom: { type: String, defaut: "restaurant : ???" }
-  },
-  mounted() {
-    console.log("restaurant.mounted");
-  },
-  data() {
-    return {
-      id,
-      cuisine,
-      nom
-    };
-  }
-};*/
+  ;*/
 }
