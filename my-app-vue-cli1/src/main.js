@@ -1,11 +1,14 @@
 import Vue from "vue";
+import restaurant from "./restaurant";
+import ajouterRestaurant from "./addRestaurant";
+
 //Composant restaurants, contient les différents restaurants
 //import restaurant from "./restaurant";
 //instance de vue principale
 new Vue({
   //  return new Vue({
   el: "#main",
-  components: ["restaurant", "add-restaurant"],
+  components: { restaurant, ajouterRestaurant },
   data: {
     restaurants: [
       {
@@ -73,65 +76,4 @@ new Vue({
         });
     }
   }
-});
-
-//COMPONENTS
-
-Vue.component("restaurant", {
-  template: `
-    <div class="item">
-      <div class="content">
-      <p class="ui green ribbon label">{{nom}}</p>
-        <p class="ui tag label">Cuisine : {{cuisine}}</p> 
-      </div>
-      <hr>
-    </div>  
-  `,
-  props: {
-    id: { type: String },
-    cuisine: { type: String, defaut: "???" },
-    nom: { type: String, defaut: "restaurant : ???" }
-  },
-  name: "restaurant"
-});
-
-Vue.component("add-restaurant", {
-  template: `
-  <div class="ui raised segment">
-    <p class="ui red ribbon label">Formulaire d'ajout</p>
-    <form class="ui inverted segment" @submit.prevent="emitAddRestaurant">
-    <div class="ui inverted form">
-      <div class="two fields">
-        <div class="field">
-          <label>Nom du restaurant</label>
-          <input v-model="nomToAdd" placeholder="Nom du restaurant" type="text">
-        </div>
-        <div class="field">
-          <label>Cuisine : </label>
-          <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
-        </div>
-      </div>
-      <button class="ui submit button">Submit</button>
-      </div>
-      </form>
-      <p> {{cuisineToAdd}} {{nomToAdd}}</p>
-  </div>
-
-  `,
-  data() {
-    return {
-      cuisineToAdd: "",
-      nomToAdd: ""
-    };
-  },
-  methods: {
-    emitAddRestaurant() {
-      console.log("signalAddRestaurant");
-      this.$emit("signalAddRestaurant", {
-        nom: this.nomToAdd,
-        cuisine: this.cuisineToAdd
-      });
-    }
-  },
-  name: "add-restaurant"
 });

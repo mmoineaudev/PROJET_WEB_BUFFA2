@@ -35,10 +35,8 @@
           </div>
         </div>
       </div>
-      <div>
-        <add-restaurant
-          v-on:signalAddRestaurant="addRestaurant($event)"
-        ></add-restaurant>
+      <div v-on:signalAddRestaurant="console.log($event)">
+        <add-restaurant></add-restaurant>
       </div>
     </div>
   </body>
