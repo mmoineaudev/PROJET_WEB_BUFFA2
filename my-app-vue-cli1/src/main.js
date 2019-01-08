@@ -51,8 +51,9 @@ new Vue({
         });
     }
   }
-  //      )}
 });
+
+//COMPONENTS
 
 Vue.component("restaurant", {
   template: `
@@ -64,20 +65,20 @@ Vue.component("restaurant", {
       <hr>
     </div>  
   `,
-  data: {
-    localnom: "DEFAULT",
-    localcuisine: "DEFAULT",
-    localid: "999"
-  },
+  // data: {
+  //   localid: { type: Number, default: id },
+  //   localcuisine: { type: String, defaut: cuisine },
+  //   localnom: { type: String, defaut: nom }
+  // },
   props: {
     id: { type: Number },
     cuisine: { type: String, defaut: "???" },
     nom: { type: String, defaut: "restaurant : ???" }
   },
   mounted() {
-    this.localcuisine = this.cuisine;
+    /*this.localcuisine = this.cuisine;
     this.localid = this.id;
-    this.localnom = this.nom;
+    this.localnom = this.nom;*/
     console.log(
       "mounted restaurant : " +
         this.localcuisine +
