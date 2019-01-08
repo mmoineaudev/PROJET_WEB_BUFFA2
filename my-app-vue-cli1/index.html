@@ -13,14 +13,14 @@
 
   <body>
     <div class="ui raised segment">
-      <p class="ui red ribbon label">Projet web : VueJS cli</p>
+      <p class="ui blue ribbon label">Projet web : VueJS cli</p>
       <span>Maxime MOINEAU - M1 MIAGE</span>
     </div>
     <div class="ui main content" id="main">
       <div class="column"></div>
 
       <div class="ui raised segment">
-        <p class="ui blue ribbon label">La liste des restaurants :</p>
+        <p class="ui red ribbon label">La liste des restaurants :</p>
 
         <div class="ui inverted segment">
           <div class="ui inverted relaxed divided list">
@@ -35,6 +35,9 @@
           </div>
         </div>
       </div>
+      <add-restaurant
+        v-on:addRestaurant="addRestaurant($event)"
+      ></add-restaurant>
     </div>
   </body>
   <script src="/dist/build.js"></script>
