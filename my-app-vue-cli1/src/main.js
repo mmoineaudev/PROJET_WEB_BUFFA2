@@ -30,11 +30,9 @@ new Vue({
   methods: {
     addRestaurant(event) {
       console.log("addRestaurant(" + event + ")");
-      //why does this work and not put ?
-      // Pour éviter que la page ne se ré-affiche
-      event.preventDefault();
-      // Récupération des valeurs des champs du formulaire
-      // en prévision d'un envoi multipart en ajax/fetch
+
+      //event.preventDefault();
+
       let url = "http://127.0.0.1:8080/api/restaurants";
       fetch(url, {
         method: "POST",
@@ -119,12 +117,15 @@ Vue.component("add-restaurant", {
       <button class="ui submit button" @click.prevent="addRestaurant">Submit</button>
       </div>
       </form>
+      <p> LOL {{cuisineToAdd}} {{nomToAdd}}</p>
   </div>
 
   `,
-  data: {
-    cuisineToAdd: "",
-    nomToAdd: ""
+  data() {
+    return {
+      cuisineToAdd: "",
+      nomToAdd: ""
+    };
   },
   methods: {
     addRestaurant() {
