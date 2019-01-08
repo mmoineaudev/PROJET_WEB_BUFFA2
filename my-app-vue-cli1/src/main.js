@@ -24,7 +24,10 @@ new Vue({
     ],
     page: 0,
     nbPerPage: 5,
-    name: ""
+    name: "",
+    addId: "null value",
+    addName: "null value",
+    addCuisine: "null value"
   },
   mounted() {
     console.log("mainView.mounted");

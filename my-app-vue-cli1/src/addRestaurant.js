@@ -8,31 +8,30 @@ export default {
       <div class="two fields">
         <div class="field">
           <label>Nom du restaurant</label>
-          <input v-model="nomToAdd" placeholder="Nom du restaurant" type="text">
+          <input v-model="addName" placeholder="Nom du restaurant" type="text">
         </div>
         <div class="field">
           <label>Cuisine : </label>
-          <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
+          <input v-model="addCuisine" placeholder="Indiquez un type de cuisine" type="text">
         </div>
       </div>
       <button class="ui submit button">Submit</button>
       </div>
       </form>
-      <p> {{cuisineToAdd}} {{nomToAdd}}</p>
+      <p> addId :{{ addId }} addName : {{ addName }} addCuisine : {{ addCuisine }}</p>
   </div>
   `,
-  data() {
-    return {
-      cuisineToAdd: "",
-      nomToAdd: ""
-    };
+  props: {
+    addId: { type: String },
+    addName: { type: String },
+    addCuisine: { type: String }
   },
   methods: {
     emitAddRestaurant() {
       console.log("signal");
       return this.$emit("signal", {
-        nom: this.nomToAdd,
-        cuisine: this.cuisineToAdd
+        nom: this.addName,
+        cuisine: this.addCuisine
       });
     }
   }

@@ -35,7 +35,13 @@
           </div>
         </div>
       </div>
-      <div @add="console.log('AAAAAAAAA')"><addrestaurant></addrestaurant></div>
+      {{ addId }} {{ addName }} {{ addCuisine }}
+      <hr />
+      <addrestaurant
+        :addId="addId"
+        :addName="addName"
+        :addCuisine="addCuisine"
+      ></addrestaurant>
     </div>
   </body>
   <script src="/dist/build.js"></script>
