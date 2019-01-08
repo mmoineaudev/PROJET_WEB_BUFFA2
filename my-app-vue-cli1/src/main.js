@@ -28,6 +28,30 @@ new Vue({
     this.getRestaurantsFromServer();
   },
   methods: {
+    addRestaurant(event) {
+      console.log("addRestaurant(" + event + ")");
+      //why does this work and not put ?
+      // Pour éviter que la page ne se ré-affiche
+      event.preventDefault();
+      // Récupération des valeurs des champs du formulaire
+      // en prévision d'un envoi multipart en ajax/fetch
+      let url = "http://127.0.0.1:8080/api/restaurants";
+      fetch(url, {
+        method: "POST",
+        body: event
+      })
+        .then(responseJSON => {
+          responseJSON.json().then(res => {
+            // Maintenant res est un vrai objet JavaScript
+            //afficheReponsePOST(res);
+            console.log(res);
+            this.getRestaurantsFromServeur();
+          });
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    },
     getRestaurantsFromServer: function() {
       console.log("getRestaurantsFromServer");
       let url =
@@ -65,31 +89,48 @@ Vue.component("restaurant", {
       <hr>
     </div>  
   `,
-  // data: {
-  //   localid: { type: Number, default: id },
-  //   localcuisine: { type: String, defaut: cuisine },
-  //   localnom: { type: String, defaut: nom }
-  // },
   props: {
     id: { type: Number },
     cuisine: { type: String, defaut: "???" },
     nom: { type: String, defaut: "restaurant : ???" }
   },
-  mounted() {
-    /*this.localcuisine = this.cuisine;
-    this.localid = this.id;
-    this.localnom = this.nom;*/
-    console.log(
-      "mounted restaurant : " +
-        this.localcuisine +
-        "; " +
-        this.localid +
-        "; " +
-        this.localnom
-    );
-  },
   data() {
     return { id: this.localid, cuisine: this.localcuisine, nom: this.localnom };
   },
   name: "restaurant"
+});
+
+Vue.component("add-restaurant", {
+  template: `
+  <div class="ui raised segment">
+    <p class="ui red ribbon label">Formulaire d'ajout</p>
+    <form class="ui inverted segment" @submit="addRestaurant">
+    <div class="ui inverted form">
+      <div class="two fields">
+        <div class="field">
+          <label>Nom du restaurant</label>
+          <input v-model="nomToAdd" placeholder="Nom du restaurant" type="text">
+        </div>
+        <div class="field">
+          <label>Cuisine : </label>
+          <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
+        </div>
+      </div>
+      <button class="ui submit button" @click.prevent="addRestaurant">Submit</button>
+      </div>
+      </form>
+  </div>
+
+  `,
+  data: {
+    cuisineToAdd: "",
+    nomToAdd: ""
+  },
+  methods: {
+    addRestaurant() {
+      console.log("emit");
+      this.$emit("addRestaurant", { nom: nomToAdd, cuisine: cuisineToAdd });
+    }
+  },
+  name: "add-restaurant"
 });
