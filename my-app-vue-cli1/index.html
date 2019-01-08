@@ -23,16 +23,7 @@
         <p class="ui red ribbon label">La liste des restaurants :</p>
 
         <div class="ui inverted segment">
-          <div class="ui inverted relaxed divided list">
-            <div v-for="(restaurant, index) in restaurants">
-              <restaurant
-                :id="restaurant._id"
-                :cuisine="restaurant.cuisine"
-                :nom="restaurant.name"
-              >
-              </restaurant>
-            </div>
-          </div>
+          <div class="ui inverted relaxed divided list"><liste></liste></div>
         </div>
       </div>
       {{ addId }} {{ addName }} {{ addCuisine }}

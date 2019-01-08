@@ -1,6 +1,7 @@
 import Vue from "vue";
 import restaurant from "./restaurant";
 import addrestaurant from "./addRestaurant";
+import liste from "./liste";
 
 //Composant restaurants, contient les différents restaurants
 //import restaurant from "./restaurant";
@@ -8,7 +9,7 @@ import addrestaurant from "./addRestaurant";
 new Vue({
   //  return new Vue({
   el: "#main",
-  components: { restaurant, addrestaurant },
+  components: { liste, restaurant, addrestaurant },
   data: {
     restaurants: [
       {
