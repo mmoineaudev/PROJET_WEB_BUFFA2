@@ -35,9 +35,11 @@
           </div>
         </div>
       </div>
-      <add-restaurant
-        v-on:addRestaurant="addRestaurant($event)"
-      ></add-restaurant>
+      <div>
+        <add-restaurant
+          v-on:signalAddRestaurant="addRestaurant($event)"
+        ></add-restaurant>
+      </div>
     </div>
   </body>
   <script src="/dist/build.js"></script>

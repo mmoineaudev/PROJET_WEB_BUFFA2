@@ -5,7 +5,7 @@ import Vue from "vue";
 new Vue({
   //  return new Vue({
   el: "#main",
-  //components: restaurant,
+  components: ["restaurant", "add-restaurant"],
   data: {
     restaurants: [
       {
@@ -88,12 +88,9 @@ Vue.component("restaurant", {
     </div>  
   `,
   props: {
-    id: { type: Number },
+    id: { type: String },
     cuisine: { type: String, defaut: "???" },
     nom: { type: String, defaut: "restaurant : ???" }
-  },
-  data() {
-    return { id: this.localid, cuisine: this.localcuisine, nom: this.localnom };
   },
   name: "restaurant"
 });
@@ -102,7 +99,7 @@ Vue.component("add-restaurant", {
   template: `
   <div class="ui raised segment">
     <p class="ui red ribbon label">Formulaire d'ajout</p>
-    <form class="ui inverted segment" @submit="addRestaurant">
+    <form class="ui inverted segment" @submit.prevent="emitAddRestaurant">
     <div class="ui inverted form">
       <div class="two fields">
         <div class="field">
@@ -114,10 +111,10 @@ Vue.component("add-restaurant", {
           <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
         </div>
       </div>
-      <button class="ui submit button" @click.prevent="addRestaurant">Submit</button>
+      <button class="ui submit button">Submit</button>
       </div>
       </form>
-      <p> LOL {{cuisineToAdd}} {{nomToAdd}}</p>
+      <p> {{cuisineToAdd}} {{nomToAdd}}</p>
   </div>
 
   `,
@@ -128,9 +125,12 @@ Vue.component("add-restaurant", {
     };
   },
   methods: {
-    addRestaurant() {
-      console.log("emit");
-      this.$emit("addRestaurant", { nom: nomToAdd, cuisine: cuisineToAdd });
+    emitAddRestaurant() {
+      console.log("signalAddRestaurant");
+      this.$emit("signalAddRestaurant", {
+        nom: this.nomToAdd,
+        cuisine: this.cuisineToAdd
+      });
     }
   },
   name: "add-restaurant"
