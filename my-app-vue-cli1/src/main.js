@@ -46,7 +46,7 @@ new Vue({
       let url = "http://127.0.0.1:8080/api/restaurants";
       fetch(url, {
         method: "POST",
-        body: event
+        body: $event
       })
         .then(responseJSON => {
           responseJSON.json().then(res => {

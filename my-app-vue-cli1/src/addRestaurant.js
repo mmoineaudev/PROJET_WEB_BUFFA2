@@ -15,7 +15,7 @@ export default {
           <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
         </div>
       </div>
-      <button class="ui submit button"  v-on:click.prevent="functionadd({nomToAdd, cuisineToAdd})">Submit</button>
+      <button class="ui submit button"  v-on:click.prevent="functionadd({nom:nomToAdd, cuisine:cuisineToAdd})">Submit</button>
       </div>
       </form>
       <p> {{cuisineToAdd}} {{nomToAdd}}</p>
