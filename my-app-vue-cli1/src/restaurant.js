@@ -11,7 +11,7 @@ export default {
   `,
   props: {
     id: { type: String },
-    nom: { type: String },
-    cuisine: { type: String }
+    cuisine: { type: String, defaut: "???" },
+    nom: { type: String, defaut: "restaurant : ???" }
   }
 };

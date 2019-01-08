@@ -8,17 +8,17 @@ export default {
       <div class="two fields">
         <div class="field">
           <label>Nom du restaurant</label>
-          <input v-model="addName" placeholder="Nom du restaurant" type="text">
+          <input v-model="nomToAdd" placeholder="Nom du restaurant" type="text">
         </div>
         <div class="field">
           <label>Cuisine : </label>
-          <input v-model="addCuisine" placeholder="Indiquez un type de cuisine" type="text">
+          <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
         </div>
       </div>
       <button class="ui submit button"  v-on:click.prevent="functionadd({nom:nomToAdd, cuisine:cuisineToAdd})">Submit</button>
       </div>
       </form>
-      <p> addId :{{ addId }} addName : {{ addName }} addCuisine : {{ addCuisine }}</p>
+      <p> {{cuisineToAdd}} {{nomToAdd}}</p>
   </div>
   `,
   props: {
