@@ -31,8 +31,15 @@ new Vue({
     this.getRestaurantsFromServer();
   },
   methods: {
-    addRestaurant(event) {
-      console.log("addRestaurant(" + event + ")");
+    addRestaurant($event) {
+      console.log(
+        JSON.stringify($event) +
+          "addRestaurant(" +
+          $event["name"] +
+          "," +
+          $event["cuisine"] +
+          ")"
+      );
 
       //event.preventDefault();
 

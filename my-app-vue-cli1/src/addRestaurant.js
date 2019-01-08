@@ -1,9 +1,9 @@
 export default {
   name: "addrestaurant",
   template: `
-  <div class="ui raised segment">
+  <div class="ui raised segment" @signal="console.log('je suis recu lol')">
     <p class="ui red ribbon label">Formulaire d'ajout</p>
-    <form class="ui inverted segment" @submit.prevent="emitAddRestaurant">
+    <form class="ui inverted segment" >
     <div class="ui inverted form">
       <div class="two fields">
         <div class="field">
@@ -15,22 +15,27 @@ export default {
           <input v-model="cuisineToAdd" placeholder="Indiquez un type de cuisine" type="text">
         </div>
       </div>
-      <button class="ui submit button">Submit</button>
+      <button class="ui submit button"  v-on:click.prevent="functionadd({nomToAdd, cuisineToAdd})">Submit</button>
       </div>
       </form>
       <p> {{cuisineToAdd}} {{nomToAdd}}</p>
   </div>
   `,
+  props: {
+    functionadd: {} //so proud of this one lol
+    //la funccionnalidad lol
+  },
   data() {
     return {
       cuisineToAdd: "",
       nomToAdd: ""
     };
   },
+
   methods: {
     emitAddRestaurant() {
       console.log("signal");
-      return this.$emit("signal", {
+      this.$emit("signal", {
         nom: this.nomToAdd,
         cuisine: this.cuisineToAdd
       });
