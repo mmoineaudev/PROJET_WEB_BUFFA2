@@ -1,6 +1,6 @@
 import Vue from "vue";
 import restaurant from "./restaurant";
-import ajouterRestaurant from "./addRestaurant";
+import addrestaurant from "./addRestaurant";
 
 //Composant restaurants, contient les différents restaurants
 //import restaurant from "./restaurant";
@@ -8,7 +8,7 @@ import ajouterRestaurant from "./addRestaurant";
 new Vue({
   //  return new Vue({
   el: "#main",
-  components: { restaurant, ajouterRestaurant },
+  components: { restaurant, addrestaurant },
   data: {
     restaurants: [
       {
@@ -53,7 +53,7 @@ new Vue({
           console.log(err);
         });
     },
-    getRestaurantsFromServer: function() {
+    getRestaurantsFromServer() {
       console.log("getRestaurantsFromServer");
       let url =
         "http://localhost:8080/api/restaurants?page=" +
@@ -74,6 +74,9 @@ new Vue({
         .catch(err => {
           console.log(err);
         });
+    },
+    add() {
+      console.log("aaaah");
     }
   }
 });

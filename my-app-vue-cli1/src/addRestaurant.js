@@ -1,5 +1,5 @@
 export default {
-  name: "add-restaurant",
+  name: "addrestaurant",
   template: `
   <div class="ui raised segment">
     <p class="ui red ribbon label">Formulaire d'ajout</p>
@@ -29,8 +29,8 @@ export default {
   },
   methods: {
     emitAddRestaurant() {
-      console.log("signalAddRestaurant");
-      return this.$emit("signalAddRestaurant", {
+      console.log("signal");
+      return this.$emit("signal", {
         nom: this.nomToAdd,
         cuisine: this.cuisineToAdd
       });
