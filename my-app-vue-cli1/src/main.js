@@ -5,6 +5,7 @@ import addrestaurant from "./addRestaurant";
 //Composant restaurants, contient les différents restaurants
 //import restaurant from "./restaurant";
 //instance de vue principale
+
 new Vue({
   //  return new Vue({
   el: "#main",
@@ -81,9 +82,6 @@ new Vue({
         .catch(err => {
           console.log(err);
         });
-    },
-    add() {
-      console.log("aaaah");
     }
   }
 });

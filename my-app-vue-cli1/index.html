@@ -9,6 +9,7 @@
       type="text/css"
       href="semantic/dist/semantic.min.css"
     />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
   </head>
 
   <body>
@@ -25,12 +26,7 @@
         <div class="ui inverted segment">
           <div class="ui inverted relaxed divided list">
             <div v-for="(restaurant, index) in restaurants">
-              <restaurant
-                :id="restaurant._id"
-                :cuisine="restaurant.cuisine"
-                :nom="restaurant.name"
-              >
-              </restaurant>
+              <restaurant :restaurant="restaurant"> </restaurant>
             </div>
           </div>
         </div>

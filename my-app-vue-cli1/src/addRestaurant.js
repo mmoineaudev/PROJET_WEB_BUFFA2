@@ -5,7 +5,7 @@ export default {
     <p class="ui red ribbon label">Formulaire d'ajout</p>
     <form class="ui inverted segment" >
     <div class="ui inverted form">
-      <div class="two fields">
+      <div class="trhee fields">
         <div class="field">
           <label>Nom du restaurant</label>
           <input v-model="nomToAdd" placeholder="Nom du restaurant" type="text">
@@ -30,15 +30,5 @@ export default {
       cuisineToAdd: "",
       nomToAdd: ""
     };
-  },
-
-  methods: {
-    emitAddRestaurant() {
-      console.log("signal");
-      this.$emit("signal", {
-        nom: this.nomToAdd,
-        cuisine: this.cuisineToAdd
-      });
-    }
   }
 };
