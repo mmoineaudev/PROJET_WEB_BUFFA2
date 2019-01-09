@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>my-app-vue-cli1</title>
+    <meta charset="utf-8" />
+    <title>Projet VueJS cli</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="semantic/dist/semantic.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
   </head>
+
   <body>
-    <div id="app"></div>
-    <script src="/dist/build.js"></script>
+    <div class="ui raised segment">
+      <p class="ui blue ribbon label">Projet web : VueJS cli</p>
+      <span>Maxime MOINEAU - M1 MIAGE</span>
+    </div>
+    <div class="ui main content" id="main">
+      <div class="column"></div>
+
+      <div class="ui raised segment">
+        <p class="ui red ribbon label">La liste des restaurants :</p>
+        <div>
+          <pager
+            @restodecr="nbrestodecr()"
+            @restoincr="nbrestoincr()"
+            @pageincr="incr()"
+            @pagedecr="decr()"
+          ></pager>
+        </div>
+        <div class="ui inverted segment">
+          <div class="ui inverted relaxed divided list">
+            <div v-for="(restaurant, index) in restaurants">
+              <restaurant :restaurant="restaurant"> </restaurant>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div><addrestaurant :functionadd="addRestaurant"></addrestaurant></div>
+    </div>
   </body>
+  <script src="/dist/build.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  ></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
 </html>
