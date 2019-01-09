@@ -22,7 +22,14 @@
 
       <div class="ui raised segment">
         <p class="ui red ribbon label">La liste des restaurants :</p>
-
+        <div>
+          <pager
+            @restodecr="nbrestodecr()"
+            @restoincr="nbrestoincr()"
+            @pageincr="incr()"
+            @pagedecr="decr()"
+          ></pager>
+        </div>
         <div class="ui inverted segment">
           <div class="ui inverted relaxed divided list">
             <div v-for="(restaurant, index) in restaurants">

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import restaurant from "./restaurant";
 import addrestaurant from "./addRestaurant";
+import pager from "./pager";
 
 //Composant restaurants, contient les différents restaurants
 //import restaurant from "./restaurant";
@@ -9,7 +10,7 @@ import addrestaurant from "./addRestaurant";
 new Vue({
   //  return new Vue({
   el: "#main",
-  components: { restaurant, addrestaurant },
+  components: { restaurant, addrestaurant, pager },
   data: {
     restaurants: [
       {
@@ -82,6 +83,34 @@ new Vue({
         .catch(err => {
           console.log(err);
         });
+    },
+    incr() {
+      console.log("incr");
+      if (this.restaurants.length > 0) {
+        this.page++;
+        this.getRestaurantsFromServer();
+      } else this.page--;
+    },
+    decr() {
+      console.log("decr");
+      if (this.page > 1) {
+        this.page--;
+        this.getRestaurantsFromServer();
+      } else this.page = 0;
+    },
+    nbrestodecr() {
+      console.log("decr");
+      if (this.nbPerPage < 2) {
+        this.nbPerPage = 1;
+      } else {
+        this.nbPerPage--;
+        this.getRestaurantsFromServer();
+      }
+    },
+    nbrestoincr() {
+      console.log("incr");
+      this.nbPerPage++;
+      this.getRestaurantsFromServer();
     }
   }
 });
