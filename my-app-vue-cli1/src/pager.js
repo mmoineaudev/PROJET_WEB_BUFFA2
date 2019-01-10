@@ -7,8 +7,8 @@ export default {
                 <button class="ui hover button" @click="$emit('pageincr')">Page suivante</button>
             </div>
              <div class="column">
-                <button class="ui hover button" @click="$emit('restodecr')">Moins de restorants</button>
-                <button class="ui hover button" @click="$emit('restoincr')">Plus de restorants</button>
+                <button class="ui hover button" @click="$emit('restodecr')">Moins de restaurants</button>
+                <button class="ui hover button" @click="$emit('restoincr')">Plus de restaurants</button>
             </div>
         </div>
   `,

@@ -96,7 +96,7 @@ new Vue({
       if (this.page > 1) {
         this.page--;
         this.getRestaurantsFromServer();
-      } else this.page = 0;
+      } else this.page = 1;
     },
     nbrestodecr() {
       console.log("decr");
