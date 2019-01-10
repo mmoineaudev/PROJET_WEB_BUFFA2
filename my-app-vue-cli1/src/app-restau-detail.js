@@ -15,7 +15,7 @@ export default {
             </slot>    
         </div>
             <button class="ui black hover button" @click="$emit('close')">
-                    réduire le menu 
+                    retour
             </button>
         </div>
     </div>
