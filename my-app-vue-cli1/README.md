@@ -1,16 +1,26 @@
-# my-app-vue-cli1
+# Projet web
 
-> A Vue.js project
+Authors : Maxime MOINEAU ; Sarah NASSIK
 
 ## Build Setup
 
-```bash
-# install dependencies
+```
 npm install
-
 # serve with hot reload at localhost:8080
 npm run dev
-
 # build for production with minification
 npm run build
+```
+
+## Problème possible
+
+Il est possible que la présence du répertoire semantic/ ne suffise pas a afficher le site correctement,
+démarche d'installation :
+
+Vous devez au préalable installer gulp
+
+```
+npm install semantic-ui --save
+cd semantic/
+gulp build
 ```
