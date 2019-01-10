@@ -18,7 +18,7 @@ export default {
           </div>
           <div class="column">
             <div v-if="!showModal" class=""><button class="ui black hover button" id="show-modal" @click="showModal = true">Voir les détails !</button></div>
-            <div v-if="!showmenu" class=""><button class="ui black hover button" id="show-menu" @click="showMenu = true">Voir le menu !</button></div>
+            <div v-if="!showMenu" class=""><button class="ui black hover button" id="show-menu" @click="showMenu = true">Voir le menu !</button></div>
           </div>
         </div>
       </div>

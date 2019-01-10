@@ -18,12 +18,14 @@
       <span>Maxime MOINEAU - M1 MIAGE</span>
     </div>
     <div class="ui main content" id="main">
+      <p class="ui red ribbon label">
+        Rechercher :
+        <input type="text" v-model="name" @keyup="getRestaurantsFromServer" />
+      </p>
+
       <div class="column"></div>
 
       <div class="ui raised segment">
-        <p class="ui red ribbon label"> Rechercher : <input type="text" v-model="name" v-on:keyup="getRestaurantsFromServeur">
-        </p>
-        <hr>
         <p class="ui red ribbon label">La liste des restaurants :</p>
         <div>
           <pager

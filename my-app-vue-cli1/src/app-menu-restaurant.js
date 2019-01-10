@@ -39,6 +39,7 @@ export default {
       recapitulatif: false,
       reservation: 0,
       menu: false,
+      dateResa: Object,
       entree: [
         { prix: Math.floor(Math.random() * 10000), intitule: "Salade" },
         { prix: Math.floor(Math.random() * 10000), intitule: "pain" },
