@@ -17,7 +17,7 @@ npm run build
 Il est possible que la présence du répertoire semantic/ ne suffise pas a afficher le site correctement,
 démarche d'installation :
 
-Vous devez au préalable installer gulp
+Vous devriez alors au préalable installer gulp
 
 ```
 npm install semantic-ui --save
